@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="sewi_config_form_view">
+            <field name="name">sewi.config.form.view</field>
+            <field name="model">sewisoft.config.settings</field>
+            <field name="arch" type="xml">
+                <form string="Configure Sewisoft Addons" version="7.0" class="oe_form_configuration">
+                    <header>
+                        <button string="Apply" type="object" name="execute" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" type="object" name="cancel" class="oe_link"/>
+                    </header>
+                    <h1 style="padding-top:15px;">Sewisoft custom addons configurations and tools</h1>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_sewisoft_addons_config_settings" model="ir.actions.act_window">
+            <field name="name">Configure Addons</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sewisoft.config.settings</field>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+        </record>
+
+        <menuitem id="menu_sewi_config_settings" name="Sewisoft" parent="base.menu_config"
+            sequence="20" action="action_sewisoft_addons_config_settings"/>
+
+    </data>
+</openerp>
+
